@@ -1,11 +1,27 @@
-
+/**
+ * Provides data fields and methods to create a player that blocks their opponent from winning. But otherwise places randomly.
+ * Extends RandomPlayer.
+ * @author William Ledingham
+ * @version 1.0
+ * @since 2020-02-16
+ *
+ */
 public class BlockingPlayer extends RandomPlayer{
 
+	/**
+	 * Constructs Blocking Player with name and mark for the board.
+	 * @param name String of a name for the player.
+	 * @param mark Char of the mark used on the board.
+	 */
 	BlockingPlayer(String name, char mark) 
 	{
 		super(name, mark);
 	}
 	
+	/**
+	 * Checks board if blocking opponent is needed and places mark in that spot.
+	 * Otherwise will place randomly.
+	 */
 	@Override
 	public void makeMove()
 	{
@@ -24,6 +40,12 @@ public class BlockingPlayer extends RandomPlayer{
 		
 	}
 	
+	/**
+	 * Checks a specific coordinate if the opponent is about to win.
+	 * @param row Row of the board.
+	 * @param col Column of the board.
+	 * @return True if opponent is about to win in this location and false if not.
+	 */
 	public Boolean testForBlocking(int row, int col)
 	{
 		if(super.getBoard().checkSpotEmpty(row, col) == false)

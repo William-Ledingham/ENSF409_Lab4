@@ -3,6 +3,12 @@
 
 import java.util.Random;
 
+/**
+ * Provides method to create a random number between bounds.
+ * @author Provided for Lab 4 Exercise 3
+ * @since 2020-02-16
+ *
+ */
 class RandomGenerator {
 
 /**

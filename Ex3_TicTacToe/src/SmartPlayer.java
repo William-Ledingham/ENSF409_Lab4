@@ -1,11 +1,25 @@
 
+/**
+ * Provides data fields and methods to create a player that is smart enough to block opponent and win if possible.
+ * Extends BlockingPlayer. 
+ * @author wille
+ *
+ */
 public class SmartPlayer extends BlockingPlayer{
 
+	/**
+	 * Constructs SmartPlayer with a name and mark used on the board.
+	 * @param name String of name for player.
+	 * @param mark Char of mark used to represent player on the board.
+	 */
 	SmartPlayer(String name, char mark) 
 	{
 		super(name, mark);
 	}
 	
+	/**
+	 * Implements players move first by checking for a winning position and then blocks opponent or places randomly.
+	 */
 	@Override
 	public void makeMove()
 	{
@@ -23,6 +37,12 @@ public class SmartPlayer extends BlockingPlayer{
 		super.makeMove();
 	}
 	
+	/**
+	 * Checks board if a specified position is available to win the game.
+	 * @param row Row of the board.
+	 * @param col Column of the board.
+	 * @return True if position will win and false if not.
+	 */
 	public Boolean testForWinning(int row, int col)
 	{
 		if(super.getBoard().checkSpotEmpty(row, col) == false)
